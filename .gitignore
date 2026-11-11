@@ -1,0 +1,22 @@
+.gradle
+
+bin
+
+Reports
+
+# Keep Groovy keyword libraries in version control, ignore only binaries/temp files
+Libs/**/*.jar
+Libs/TempTestCase*.groovy
+
+output
+
+!output/.gitkeep
+build
+
+.classpath
+
+.project
+
+.cache
+
+.DS_Store
