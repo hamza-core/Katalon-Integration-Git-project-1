@@ -1,14 +1,14 @@
-# CS-7B — Katalon Studio Automation Tests
+# Katalon Integration-Git project 1
 
 **Author: Ameer Hamza**
-GitHub: [@hamza-core](https://github.com/hamza-core) · Repository: [cs-7b](https://github.com/hamza-core/cs-7b)
+GitHub: [@hamza-core](https://github.com/hamza-core) · Repository: [Katalon-Integration-Git-project-1](https://github.com/hamza-core/Katalon-Integration-Git-project-1)
 
 ---
 
 ## Overview
 
 Web automation test suite for the **CURA Healthcare Service** demo application
-(`http://demoaut.katalon.com/`), built with **Katalon Studio 11.5.0**.
+(`http://demoaut.katalon.com/`), built with **Katalon Studio 11.5.0** — *Katalon Integration with GitHub*.
 
 The suite covers the full "Book an Appointment" journey: login → hospital selection →
 readmission/insurance options → visit date → comment → booking confirmation.
@@ -103,7 +103,7 @@ This project is linked to GitHub and pushed via a **Personal Access Token**.
 
 ```bash
 # Clone
-git clone https://github.com/hamza-core/cs-7b.git
+git clone https://github.com/hamza-core/Katalon-Integration-Git-project-1.git
 
 # Configure identity
 git config user.name  "Ameer Hamza"
