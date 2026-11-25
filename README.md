@@ -69,14 +69,29 @@ WebAuto/
 ### From the Command Line
 
 ```bash
-# macOS / Linux
-./katalon -project=. -suite="Test Suites/New Test Suite2.ts" \
-          -runConfiguration=Chrome -report=Reports -logLevel=info
-
-# Windows
-katalon.exe -project=. -suite="Test Suites\New Test Suite2.ts" ^
-            -runConfiguration=Chrome -report=Reports -logLevel=info
+# macOS / Linux (Katalon Runtime Engine)
+katalonc -noSplash -runMode=console -projectPath="." \
+  -retry=0 -testSuitePath="Test Suites/New Test Suite" \
+  -executionProfile="default" -browserType="Chrome" \
+  -apiKey="<YOUR_KATALON_API_KEY>"
 ```
+
+> Adjust `katalonc` to your Katalon Runtime Engine or Katalon Studio executable path.
+
+## CI: Jenkins + GitHub
+
+This repo includes a parameterized [`Jenkinsfile`](Jenkinsfile) for running Katalon tests in Jenkins.
+
+- Pipeline: checks out from GitHub, runs Katalon CLI, archives `Reports/**`, publishes JUnit results.
+- Setup guide: [docs/JENKINS_SETUP.md](docs/JENKINS_SETUP.md)
+
+Key Jenkins setup steps:
+1. Install Jenkins and required plugins (Git, Pipeline, GitHub, JUnit).
+2. Add a Jenkins **Secret text** credential named `katalon-api-key`.
+3. Create a Pipeline job using **Pipeline script from SCM** pointing to this repo and `Jenkinsfile`.
+4. Configure a GitHub webhook to `http://<jenkins-host>/github-webhook/` (or use Poll SCM for local Jenkins).
+
+See [docs/JENKINS_SETUP.md](docs/JENKINS_SETUP.md) for full details.
 
 ### Run a single test case
 
